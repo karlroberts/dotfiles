@@ -11,11 +11,12 @@ let maplocalleader = "\\"
 syntax on " Turn on syntax highligthing
 set showmatch  "Show matching bracets when text indicator is over them
 
+set background=dark
 colorscheme delek
 
 " Switch on filetype detection and loads 
 " indent file (indent.vim) for specific file types
-filetype indent on
+filetype plugin indent on
 filetype on
 set autoindent " Copy indent from the row above
 set si " Smart indent
@@ -26,7 +27,7 @@ set si " Smart indent
 " set nu " Number lines
 set hls " highlight search
 set lbr " linebreak
-set rnu " relativenumber
+set number "linenumber
 
 " Use 2 space instead of tab during format
 set expandtab
@@ -96,8 +97,6 @@ iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
 " common phrases
-"iabbrev @@ karl.roberts@owtelse.com
-" iabbrev ssig <cr>Karl Roberts<cr>karl.roberts@owtelse.com
 
 "Operator mappings
 " select in next parens
@@ -114,6 +113,10 @@ onoremap il{ :<c-u>normal! F}vi{<cr>
 " map quicklist :cnext :cprevious
 nnoremap <leader>n :cnext
 nnoremap <leader>p :cprevious
+
+" turn of highlight after search
+nnoremap <c-l> :nohlsearch<cr>
+nnoremap <buffer> <localleader>r :set relativenumber!<cr>
 
 
 set hlsearch "highlight what was found
