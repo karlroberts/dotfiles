@@ -1,14 +1,21 @@
 #!/bin/bash
 
 CWD=`pwd`
-DOTFILES=~/dotfiles
-SCALA-DIST=~/projects/skunk/scala-dist
+cd `dirname $0`
+
+DOTFILES=`pwd`
+
+cd $CWD
+
+echo DOTFILE is $DOTFILES
+
+SCALA-DIST=${DOTFILES}/../skunk/scala-dist
 
 UPDATE-SCALA-DIST=false
 
 # .gitconfig
 rm ~/.gitconfig
-ln -s ${DOTFFILES}/gitconfig  ~/.gitconfig
+ln -s ${DOTFILES}/gitconfig  ~/.gitconfig
 
 # .vimrc
 rm ~/.vimrc
@@ -63,9 +70,11 @@ then
   mkdir  ${DOTFILES}/vim/bundle/taglist
   cd ${DOTFILES}/vim/bundle/taglist
   # gen the helpfiles
+  mkdir ./doc
   cd ./doc
   echo " cd vim/bundle/taglist; go to vim run :helptags ."
   # vim -c ":helptags ."
+  cd ..
   unzip /tmp/downloads/taglist/taglist.zip
   cd $CWD
 fi

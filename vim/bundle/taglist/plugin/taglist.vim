@@ -547,9 +547,6 @@ let s:tlist_def_vim_settings =
 " yacc language
 let s:tlist_def_yacc_settings = 'yacc;l:label'
 
-"scala lang
-let s:tlist_def_scala_settings = 'scala;T:Types;t:Trait;a:Classes;c:Classes;m:CaseClasses;o:Objects;f:funcs;V:vals;v:vars'
-
 "------------------- end of language specific options --------------------
 
 " Vim window size is changed by the taglist plugin or not
