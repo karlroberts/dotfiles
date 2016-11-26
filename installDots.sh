@@ -6,6 +6,10 @@ SCALA-DIST=~/projects/skunk/scala-dist
 
 UPDATE-SCALA-DIST=false
 
+# .gitconfig
+rm ~/.gitconfig
+ln -s ${DOTFFILES}/gitconfig  ~/.gitconfig
+
 # .vimrc
 rm ~/.vimrc
 ln -s ${DOTFILES}/vimrc       ~/.vimrc
