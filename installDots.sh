@@ -13,6 +13,22 @@ SCALA-DIST=${DOTFILES}/../skunk/scala-dist
 
 UPDATE-SCALA-DIST=false
 
+#bash profile stuff
+rm -f ~/.bash_aliases
+ln -s ${DOTFILES}/bash_aliases ~/.bash_aliases
+rm -f ~/.bash_paths
+ln -s ${DOTFILES}/bash_paths ~/.bash_paths
+
+
+# .coinspotpos
+mkdir -p ~/.coinspotpos
+#rm -rf ~/.coinspotpos
+for f in `ls ${DOTFILES}/coinspotpos`
+do
+  ln -s ${DOTFILES}/coinspotpos/${f} ~/.coinspotpos
+done
+
+
 # .gitconfig
 rm ~/.gitconfig
 ln -s ${DOTFILES}/gitconfig  ~/.gitconfig

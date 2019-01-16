@@ -1,0 +1,17 @@
+# Add the needful to my path
+# JAVA resolve the current alternative
+export JAVA_HOME=$(realpath $(dirname $(dirname $(realpath $(which javac)))))
+export PATH=$PATH:$JAVA_HOME/bin
+
+#scala
+export SCALA_HOME=/usr/local/scala/scala-latest
+export PATH=$PATH:$SCALA_HOME/bin
+
+#p4v perforce merge tools
+P4VHOME=/usr/local/p4v/p4v-latest
+export PATH=$PATH:$P4VHOME/bin
+
+# my local stuff, do last
+export PATH=$PATH:~/bin
+export ANDROID_HOME=/home/robertk/android_sdk
+export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin

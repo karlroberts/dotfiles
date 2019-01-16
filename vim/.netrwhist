@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/robertk/projects/octopress/Dockerfile'
+let g:netrw_dirhist_2='/home/robertk/.git-templates/hooks'
+let g:netrw_dirhist_3='/home/robertk/projects/skunk/pyregexlambda/.git'
+let g:netrw_dirhist_4='/home/robertk/projects/avocado_cust/ai/hel/.settings'
+let g:netrw_dirhist_5='/home/robertk/projects/talks/why_is_devops/project'

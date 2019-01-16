@@ -1,0 +1,10 @@
+alias s="sudo su -"
+alias gf="git fetch --prune"
+alias i="intellij"
+alias tt="cd ~/projects/kirko/timbot"
+alias hel="cd /home/robertk/projects/avocado_cust/ai/hel"
+alias spinup="cd /home/robertk/projects/avocado_cust/ai/spinup"
+alias blog="cd /home/robertk/projects/octopress"
+alias blogup="cd /home/robertk/projects/octopress && vagrant up && vagrant ssh"
+alias sno="cd /home/robertk/projects/kirko/config-service"
+
