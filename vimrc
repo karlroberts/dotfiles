@@ -125,6 +125,10 @@ set incsearch "highlight what i'm finding
 nnoremap ? ?\v
 nnoremap / /\v
 
+" Search selected text in visual mode
+" as long as it doesn't contain regec / or \ chars
+vnoremap // y/\V<C-R>"<CR>
+
 "retrain fingers
 " inoremap <esc> <nop>
 " inoremap jk <esc>

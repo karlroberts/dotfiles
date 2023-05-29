@@ -1,17 +1,43 @@
 # Add the needful to my path
 # JAVA resolve the current alternative
-export JAVA_HOME=$(realpath $(dirname $(dirname $(realpath $(which javac)))))
+export JAVA_HOME=$(realpath $(dirname $(dirname $(realpath $(which java)))))
 export PATH=$PATH:$JAVA_HOME/bin
 
 #scala
+export COURSIER_HOME=$HOME/.local/share/coursier
+export PATH="$PATH:$COURSIER_HOME/bin"
+
 export SCALA_HOME=/usr/local/scala/scala-latest
 export PATH=$PATH:$SCALA_HOME/bin
+
+SBT_OPTS="-Xmx4G -XX:+UseG1GC"
+
+#linkerd
+export PATH=$PATH:$HOME/.linkerd2/bin
+
+# bloop server BSP
+#BLOOP_HOME=/home/robertk/bin/bloop
+#export PATH=$PATH:$BLOOP_HOME
+#. $BLOOP_HOME/bash/bloop
 
 #p4v perforce merge tools
 P4VHOME=/usr/local/p4v/p4v-latest
 export PATH=$PATH:$P4VHOME/bin
 
+
+#terrafrom tfenv git checkout to ~/.tfenv
+export TF_ENV=/home/robertk/.tfenv/bin
+export PATH=${PATH}:${TF_ENV}
+
+# rust arduino
+export AVR_TOOLCHAIN_HOME=/usr/local/avr-8-bit-toolchain/latest/avr8-gnu-toolchain-linux_x86_64
+export PATH=${PATH}:${AVR_TOOLCHAIN_HOME}/bin
+
 # my local stuff, do last
 export PATH=$PATH:~/bin
 export ANDROID_HOME=/home/robertk/android_sdk
 export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
+
+#skyfii stuff
+export SKYFII_DOCKER_VOLUME_HOME=/home/robertk/projects/skyfii/dockervolumes
+
