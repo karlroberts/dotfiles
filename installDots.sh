@@ -28,6 +28,10 @@ do
   ln -s ${DOTFILES}/coinspotpos/${f} ~/.coinspotpos
 done
 
+# .docker
+mkdir -p ~/.docker
+rm ~/.docker/config.json
+ln -s ${DOTFILES}/docker_config.json ~/.docker/config.json
 
 # .gitconfig
 rm ~/.gitconfig
