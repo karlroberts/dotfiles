@@ -17,13 +17,25 @@
 [merge]
     keepBackup = false;
     tool = p4merge
+[mergetool]
+    prompt = true
 [mergetool "p4merge"]
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
     keepTemporaries = false
     trustExitCode = false
-    keepBackup = true
+    keepBackup = false
     writeToTemp = true 
 [diff]
     tool = p4merge
+[difftool]
+    prompt = true
+[difftool "p4merge"]
+    cmd = p4merge "$LOCAL" "$REMOTE"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
+    writeToTemp = true
+
 
 [push]
 	default = simple

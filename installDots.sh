@@ -13,6 +13,44 @@ SCALA-DIST=${DOTFILES}/../skunk/scala-dist
 
 UPDATE-SCALA-DIST=false
 
+# credentials
+if [[ -d /media/robertk/secret/backup/ssh ]]
+then
+  mkdir -p ~/.ssh
+  chmod 700 ~/.ssh
+  cp /media/robertk/secret/backup/ssh/id_rsa ~/.ssh
+  chmod 400 ~/.ssh/id_rsa
+  cp /media/robertk/secret/backup/ssh/id_rsa.pub ~/.ssh
+  chmod 400 ~/.ssh/id_rsa.pub
+  cp /media/robertk/secret/backup/ssh/id_rsa_skyfii ~/.ssh
+  chmod 400 ~/.ssh/id_rsa_skyfii
+  cp /media/robertk/secret/backup/ssh/id_rsa_skyfii.pub ~/.ssh
+  chmod 400 ~/.ssh/id_rsa_skyfii.pub
+  
+  mkdir ~/.sbt
+  chmod 770 ~/.sbt
+  cp /media/robertk/secret/backup/nexus/skyfii-nexus-credentials ~/.sbt/.credentials
+  chmod 400 ~/.sbt/.credentials
+  
+  cp /media/robertk/secret/backup/nexus/beonic-nexus-credentials ~/.sbt/.beonic-nexus-credentials
+  chmod 400 ~/.sbt/.beonic-nexus-credentials
+  
+  mkdir -p ~/.m2
+  ln -s ~/.sbt/.credentials ~/.m2/.credentials
+  ln -s ~/.sbt/.credentials ~/.m2/.credentials
+  
+  mkdir -p ~/.ivy2
+  ln -s ~/.sbt/.credentials ~/.ivy2/.credentials
+  ln -s ~/.sbt/.beonic-nexus-credentials ~/.ivy2/.beonic-nexus-credentials
+  
+  # .docker
+  mkdir -p ~/.docker
+  rm -f ~/.docker/config.json
+  cp /media/robertk/secret/backup/docker/docker_config.json ~/.docker/config.json
+  chmod 700 ~/.docker/config.json
+  echo "moded docker_config_from_secret if you see this diff be sure to back up to secrets before you trash me" >> ${DOTFILES}/docker_config.json
+fi
+
 #bash profile stuff
 rm -f ~/.bash_aliases
 ln -s ${DOTFILES}/bash_aliases ~/.bash_aliases
@@ -28,10 +66,6 @@ do
   ln -s ${DOTFILES}/coinspotpos/${f} ~/.coinspotpos
 done
 
-# .docker
-mkdir -p ~/.docker
-rm ~/.docker/config.json
-ln -s ${DOTFILES}/docker_config.json ~/.docker/config.json
 
 # .gitconfig
 rm ~/.gitconfig
