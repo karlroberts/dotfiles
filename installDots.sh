@@ -52,6 +52,11 @@ then
 fi
 
 #bash profile stuff
+rm -f ~/.bashrc
+ln -s ${DOTFILES}/bashrc ~/.bashrc
+rm -f ~/.zshrc
+ln -s ${DOTFILES}/zshrc ~/.zshrc
+
 rm -f ~/.bash_aliases
 ln -s ${DOTFILES}/bash_aliases ~/.bash_aliases
 rm -f ~/.bash_paths
