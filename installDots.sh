@@ -109,7 +109,7 @@ then
 fi
 
 # get scala-dist vim stuff
-if test ${UPDATE-SCALA-DIST}x -eq "truex"
+if  [[ ${UPDATE-SCALA-DIST}x == "truex" ]]
 then
   cd ${SCALA-DIST}
   git pull origin
