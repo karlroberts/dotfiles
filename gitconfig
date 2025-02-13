@@ -41,3 +41,5 @@
 	default = simple
 [init]
 	templatedir = ~/.git-templates
+[rerere]
+	enabled = true
